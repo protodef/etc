@@ -1,0 +1,16 @@
+[user]
+	name = Junseok Yang
+	email = protodef@gmail.com
+
+[core]
+	editor = vi
+	pager = less
+	quotePath = false
+
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+
+[alias]
+	tree = log --decorate --all --oneline --graph

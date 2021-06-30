@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# .bashrc
+if [ ! -f "$HOME/.bashrc.orig" ]; then
+	mv "$HOME/.bashrc" "$HOME/.bashrc.orig"
+	cp "$HOME/.bashrc.orig" "$HOME/.bashrc"
+
+	cat << \end-of-script >> "$HOME/.bashrc"
+
+# NOTE: added by etc/configure script
+if [ -f "$HOME/etc/bashrc" ]; then
+	. "$HOME/etc/bashrc"
+fi
+end-of-script
+fi
+
+# Vim
+if [ ! -L "$HOME/.vimrc" ]; then
+	ln -s "$HOME/etc/vimrc" "$HOME/.vimrc"
+fi
+
+# Git
+if [ ! -L "$HOME/.gitconfig" ]; then
+	ln -s "$HOME/etc/gitconfig" "$HOME/.gitconfig"
+fi
